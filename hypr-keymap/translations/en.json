@@ -1,0 +1,4 @@
+{
+  "settings.hyprland_config.label": "Hyprland config",
+  "settings.hyprland_config.description": "Your main Hyprland Lua config. The keymap loads it to read your binds; with a hyprland.conf setup it falls back to hyprctl (read-only)."
+}

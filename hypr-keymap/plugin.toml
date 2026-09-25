@@ -1,0 +1,38 @@
+# Hyprland Keymap: your Hyprland binds on a keyboard map, with search and editing.
+# See README.md in this folder for setup (editing needs the keymap hook).
+
+id = "flopet/hypr-keymap"
+name = "Hyprland Keymap"
+version = "1.0.0"
+plugin_api = 30
+author = "flopet"
+license = "MIT"
+icon = "keyboard"
+description = "Your Hyprland binds on a keyboard map, with search and editing."
+dependencies = ["lua", "python3", "hyprctl"]
+tags = ["panel", "bar", "hyprland", "utility"]
+
+# The Hyprland config the keymap loads to read your binds
+[[setting]]
+key = "hyprland_config"
+type = "file"
+label_key = "settings.hyprland_config.label"
+description_key = "settings.hyprland_config.description"
+default = "~/.config/hypr/hyprland.lua"
+extensions = [".lua"]
+
+# Toggle with: noctalia msg panel-toggle flopet/hypr-keymap:keymap
+[[panel]]
+id = "keymap"
+entry = "panel.luau"
+width = 1180
+height = 860
+placement = "floating"
+position = "center"
+keyboard_focus = "exclusive"
+capture_keys = ["slash"] # "/" jumps to the search
+
+# Bar button that toggles the panel
+[[widget]]
+id = "button"
+entry = "widget.luau"
